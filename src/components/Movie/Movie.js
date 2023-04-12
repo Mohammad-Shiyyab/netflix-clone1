@@ -25,13 +25,13 @@ export default function Movie(props){
                 <Card.Text>
                     {props.movie.release_data}
                 </Card.Text>
-                <Button variant = "primary" onClick={handleShow}>add to favourite</Button>
+                <Button variant = "primary" onClick={handleShow}> showDetales</Button>
             </Card.Body>
 
 
             </Card>
 
-            <ModalMovie show={show} movie={props.movie} handleClose={handleClose} />
+            <ModalMovie show={show} movie={props.movie} handleClose={handleClose}  commentHandler={props.commentHandler} />
 
 
         </>

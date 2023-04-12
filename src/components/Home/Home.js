@@ -17,6 +17,18 @@ export default function Home () {
     }
 
 
+    function commentHandler(newMovie , id){
+        trendingMovie.map(a=>{
+            if(a.id === id){ 
+                a.comment = newMovie.userComment
+                
+                return a;
+            }else{
+                return a
+            }
+        })
+    }
+
     useEffect(() =>{
         getTrendingMovie()
     },[])
@@ -24,7 +36,7 @@ export default function Home () {
 
     return(
         <>
-        <MovieList movies={trendingMovie} />
+        <MovieList movies={trendingMovie} commentHandler={commentHandler} />
         </>
     )
 }
